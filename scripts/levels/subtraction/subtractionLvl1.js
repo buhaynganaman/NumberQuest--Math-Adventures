@@ -18,6 +18,7 @@ export function renderSubtractionLvl1() {
         <div class="playground-Container">
           <div class="playground">
             <span class="instruction">Solve this:</span>
+            <img class="hintPotionIcon" src="assets/images/hintPotionICON.png">
             <div class="question">
               5 - 10 = <span class="answer"> ? </span>
             </div>

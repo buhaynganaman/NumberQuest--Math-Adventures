@@ -32,7 +32,9 @@ export function renderCountingLvl1() {
           </div>
 
           <div class="mission-playground">
+            <div class="hint">"Try counting each cookie you eat—1, 2, 3... That way, you’ll always know how many you’ve had!"</div>
             <p class="eaten">Eaten = <span class="eaten-Counter">0</span></p>
+            <img class="hintPotionIcon" src="assets/images/hintPotionICON.png">
             <div class="table">
               <img class="cookies1 cookies" src="assets/images/cookiesICON.png">
               <img class="cookies2 cookies" src="assets/images/cookiesICON.png">
@@ -64,6 +66,8 @@ export function initrenderCountingLvl1() {
   });
 
   // Game logic
+  const hintPotion = document.querySelector(".hintPotionIcon");
+  const hint = document.querySelector(".hint");
   const cookies = document.querySelectorAll(".cookies");
   const eaten = document.querySelector(".eaten-Counter");
   const keepEatingBtn = document.querySelector(".keepEatingBtn")
@@ -71,6 +75,10 @@ export function initrenderCountingLvl1() {
 
   const rightAmount = 5;
   let eatenAmount = 0;
+
+  hintPotion.addEventListener("click", () => {
+    hint.style.display = "block";
+  })
 
   cookies.forEach(cookie => {
     cookie.addEventListener("click", () => {

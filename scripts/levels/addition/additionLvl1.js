@@ -18,6 +18,7 @@ export function renderAdditionlvl1() {
         <div class="playground-Container">
           <div class="playground">
             <span class="instruction">Solve this:</span>
+            <img class="hintPotionIcon" src="assets/images/hintPotionICON.png">
             <div class="question">
               1 + 1 = <span class="answer"> ? </span>
             </div>
