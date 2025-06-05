@@ -58,7 +58,7 @@ export function initrenderSubtractionLvl1() {
         choices.forEach(btn => btn.disabled = true);
 
         // Show level complete panel
-        showLevelCompletePanel();
+        showLevelCompletePanel("subtractionlvl1");
 
       } else {
         // Hide the wrong answer
@@ -69,10 +69,10 @@ export function initrenderSubtractionLvl1() {
 }
 
 // Function to show the level complete panel
-function showLevelCompletePanel() {
+function showLevelCompletePanel(levelId) {
   const mainScreen = document.querySelector(".main-Screen");
 
   // insert the panel to screen
-  mainScreen.insertAdjacentHTML('beforeend', renderCompleteLvLpanel());
-  initrenderCompleteLvLpanel();
+  mainScreen.insertAdjacentHTML('beforeend', renderCompleteLvLpanel(levelId));
+  initrenderCompleteLvLpanel(levelId);
 }

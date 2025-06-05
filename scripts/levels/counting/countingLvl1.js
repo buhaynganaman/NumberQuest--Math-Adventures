@@ -54,10 +54,11 @@ export function renderCountingLvl1() {
 
 export function initrenderCountingLvl1() {
 
+  const mainScreen = document.querySelector(".main-Screen");
+
   // subtractionGameScreen ==> StartGame screen
   const backBtn = document.querySelector(".homeBtn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
   });
@@ -81,26 +82,32 @@ export function initrenderCountingLvl1() {
 
   keepEatingBtn.addEventListener("click", () => {
     if(rightAmount !== eatenAmount) {
-      const mainScreen = document.querySelector(".main-Screen");
-      mainScreen.insertAdjacentHTML('beforeend', renderFailPanel());
-      initrenderFailPanel();
+      showLevelFailPanel("countinglvl1");
     } else if (rightAmount === eatenAmount) {
-      const mainScreen = document.querySelector(".main-Screen");
-      mainScreen.insertAdjacentHTML('beforeend', renderFailPanel1());
-      initrenderFailPanel1();
+      showLevelFailPanel1("countinglvl1");
     }
   })
 
   DoneEatingBtn.addEventListener("click", () => {
     if(rightAmount !== eatenAmount) {
-      const mainScreen = document.querySelector(".main-Screen");
-      mainScreen.insertAdjacentHTML('beforeend', renderFailPanel());
-      initrenderFailPanel();
+      showLevelFailPanel("countinglvl1");
     } else {
-      const mainScreen = document.querySelector(".main-Screen");
-      mainScreen.insertAdjacentHTML('beforeend', renderSuccesPanel());
-      initrenderSuccesPanel();
+      showLevelSuccessPanel("countinglvl1");
     }
   })
 
+  function showLevelSuccessPanel(levelId) {
+    mainScreen.insertAdjacentHTML('beforeend', renderSuccesPanel(levelId));
+    initrenderSuccesPanel(levelId);
+  }
+
+  function showLevelFailPanel(levelId) {
+    mainScreen.insertAdjacentHTML('beforeend', renderFailPanel(levelId));
+    initrenderFailPanel(levelId);
+  }
+
+  function showLevelFailPanel1(levelId) {
+    mainScreen.insertAdjacentHTML('beforeend', renderFailPanel1(levelId));
+    initrenderFailPanel1(levelId);
+  }
 }

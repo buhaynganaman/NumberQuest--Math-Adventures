@@ -1,8 +1,9 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
+import { renderCountingLvl1, initrenderCountingLvl1 } from '../../levels/counting/countingLvl1.js';
 
-export function renderSuccesPanel() {
+export function renderSuccesPanel(levelId) {
   return `
-      <div class="panel-Screen">
+      <div class="panel-Screen data-level="${levelId}">
         <div class="panelContainer-Complete">
           <div class="CompleteTxt">
             Complete
@@ -27,14 +28,24 @@ export function renderSuccesPanel() {
   `;
 }
 
-export function initrenderSuccesPanel() {
+export function initrenderSuccesPanel(levelId) {
+  const mainScreen = document.querySelector(".main-Screen");
 
   // panel ==> StartGame screen
   const backBtn = document.querySelector(".panel-Screen .homeBtn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
+  });
+
+  // Retry button
+  const retryBtn = document.querySelector(".panel-Screen .retryBtn");
+  retryBtn.addEventListener("click", () => {
+    // Dynamic level retry based on ID
+    if (levelId === "countinglvl1") {
+      mainScreen.innerHTML = renderCountingLvl1();
+      initrenderCountingLvl1();
+    }
   });
 
 }

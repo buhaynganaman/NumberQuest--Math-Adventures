@@ -1,8 +1,10 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
+import { renderAdditionlvl1, initrenderAdditionlvl1 } from '../../levels/addition/additionLvl1.js';
+import { renderSubtractionLvl1, initrenderSubtractionLvl1 } from '../../levels/subtraction/subtractionLvl1.js';
 
-export function renderCompleteLvLpanel() {
+export function renderCompleteLvLpanel(levelId) {
   return `
-      <div class="panel-Screen">
+      <div class="panel-Screen" data-level="${levelId}">
         <div class="panelContainer-Complete">
           <div class="CompleteTxt">
             Complete
@@ -27,14 +29,28 @@ export function renderCompleteLvLpanel() {
   `;
 }
 
-export function initrenderCompleteLvLpanel() {
+export function initrenderCompleteLvLpanel(levelId) {
+  const mainScreen = document.querySelector(".main-Screen");
 
   // panel ==> StartGame screen
   const backBtn = document.querySelector(".panel-Screen .homeBtn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
+  });
+
+  // Retry button
+  const retryBtn = document.querySelector(".panel-Screen .retryBtn");
+  retryBtn.addEventListener("click", () => {
+    // Dynamic level retry based on ID
+    if (levelId === "additionlvl1") {
+      mainScreen.innerHTML = renderAdditionlvl1();
+      initrenderAdditionlvl1();
+    } else if(levelId === "subtractionlvl1") {
+      mainScreen.innerHTML = renderSubtractionLvl1();
+      initrenderSubtractionLvl1();
+    }
+
   });
 
 }
