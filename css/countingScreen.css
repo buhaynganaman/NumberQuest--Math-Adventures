@@ -1,0 +1,168 @@
+.counting-Screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+
+}
+
+.counting-header-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+.home-Btn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 40px;
+}
+.counting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-heading);
+  color: var(--secondary-color);
+}
+
+.playground-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  width: 100%;
+}
+
+.mission-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+
+  position: relative;
+}
+.mission {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  font-size: var(--text-passive);
+}
+.mission-p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  width: 200px;
+}
+
+.mission-playground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+  position: relative;
+}
+
+.table {
+  width: 270px;
+  height: 270px;
+  box-shadow: 6px 9px 10px 0px #ef9d3a;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  position: relative;
+}
+
+.cookies {
+  width: 60px;
+  height: 60px;
+}
+
+.cookies1 {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+.cookies2 {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+}
+.cookies3 {
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+}
+
+.cookies4 {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+}
+.cookies5 {
+  position: absolute;
+  top: 100px;
+  left: 101px;
+}
+.cookies6 {
+  position: absolute;
+  top: 200px;
+  right: 101px;
+}
+
+.eaten {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  font-size: var(--text-passive);
+}
+
+.missionButtons {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.keepEatingBtn, .DoneEatingBtn {
+  width: 90px;
+  height: 70px;
+  padding: 10px;
+  
+  border: none;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  font-size: 15px;
+
+  transition: width 0.22s;
+}
+.keepEatingBtn:active, .DoneEatingBtn:active {
+  width: 80px;
+  height: 60px;
+}
