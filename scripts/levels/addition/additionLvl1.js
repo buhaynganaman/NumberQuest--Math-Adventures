@@ -1,4 +1,5 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
+import { renderCompleteLvLpanel, initrenderCompleteLvLpanel } from '../../pages/panels/completePanel.js';
 
 export function renderAdditionlvl1() {
   return `
@@ -33,14 +34,44 @@ export function renderAdditionlvl1() {
 }
 
 export function initrenderAdditionlvl1() {
-
-  // additionGameScreen ==> StartGame screen
+  // additionScreen ==> StartGame screen
   const backBtn = document.querySelector(".homeBtn");
   backBtn.addEventListener("click", () => {
     const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderStartGame();
-    initStartGame();  // initialize StartGame event keys
+    initStartGame(); // initialize StartGame event keys
   });
 
+  // Game logic
+  const choices = document.querySelectorAll(".choices-Btn");
+  const answerSpan = document.querySelector(".answer");
+  const correctAnswer = "2";
 
+  choices.forEach(choice => {
+    choice.addEventListener("click", () => {
+      if (choice.textContent === correctAnswer) {
+        // Show the correct answer in the UI
+        answerSpan.textContent = correctAnswer;
+
+        // Disable all choices
+        choices.forEach(btn => btn.disabled = true);
+
+        // Show level complete panel
+        showLevelCompletePanel();
+
+      } else {
+        // Hide the wrong answer
+        choice.style.display = "none";
+      }
+    });
+  });
+}
+
+// Function to show the level complete panel
+function showLevelCompletePanel() {
+  const mainScreen = document.querySelector(".main-Screen");
+
+  // insert the panel to screen
+  mainScreen.insertAdjacentHTML('beforeend', renderCompleteLvLpanel());
+  initrenderCompleteLvLpanel();
 }

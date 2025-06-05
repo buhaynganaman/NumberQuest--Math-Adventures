@@ -29,7 +29,7 @@
 
   border-radius: 20px;
 
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color);
 }
 .FailedTxt {
   color: var(--fail-color);
@@ -37,7 +37,7 @@
 }
 .FailedSentence {
   text-align: center;
-  color: var(--secondary-color);
+  color: var(--tertiary-color);
   font-size: var(--text-passive);
 }
 .optionsBtnContainer {
