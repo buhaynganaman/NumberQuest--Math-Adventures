@@ -1,0 +1,119 @@
+.Subtraction-Screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+
+}
+
+.Subtraction-header-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+.home-Btn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 40px;
+}
+.Subtraction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-heading);
+  color: var(--secondary-color);
+}
+
+.playground-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+.playground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  height: 320px;
+  border-radius: 20px;
+  background-color: var(--tertiary-color);
+  position: relative;
+}
+
+.instruction {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: var(--text-passive);
+  color: var(--secondary-color);
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 20px;
+
+  font-size: var(--text-subTitle);
+  color: var(--secondary-color);
+}
+
+.answer {
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
+
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.choices {
+  position: absolute;
+  bottom: 10px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 350px;
+  height: 80px;
+}
+
+.choices-Btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  font-size: var(--text-passive);
+
+  transition: width 0.22s, height 0.22s;
+}
+.choices-Btn:hover {
+  width: 70px;
+  height: 70px;
+}
+.choices-Btn:active {
+  width: 60px;
+  height: 60px;
+}

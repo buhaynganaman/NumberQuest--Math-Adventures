@@ -38,7 +38,7 @@
   position: relative;
   background-color: transparent;
 
-  font-size: var(--text-heading);
+  font-size: var(--text-subTitle);
   color: var(--tertiary-color);
 
   transition: color 0.10s, font-size 0.22s;
@@ -47,10 +47,10 @@
   color: var(--primary-color);
 }
 .game-type-Btn:hover {
-  font-size: var(--text-headingPlus);
+  font-size: var(--text-subTitlePlus);
 }
 .text-Bg {
-  font-size: var(--text-headingPlus);
+  font-size: var(--text-subTitlePlus);
   color: var(--secondary-color);
   z-index: -1;
   text-align: center;
@@ -58,6 +58,8 @@
   line-height: 90px;
   position: absolute;
 }
+
+
 
 .game-type-Btn-soon {
   background-color: transparent;
@@ -73,11 +75,11 @@
   position: relative;
   background-color: transparent;
 
-  font-size: var(--text-heading);
+  font-size: var(--text-subTitle);
   color: var(--tertiary-color);
 }
 .text-Bg-soon {
-  font-size: var(--text-headingPlus);
+  font-size: var(--text-subTitlePlus);
   color: gray;
   z-index: -1;
   text-align: center;

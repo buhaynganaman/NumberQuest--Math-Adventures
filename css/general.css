@@ -14,10 +14,12 @@
   /* Base text sizes */
   --text-titleBG: 5.1rem;
   --text-title: 5rem;
+  --text-subTitlePlus: 4.1rem;
+  --text-subTitle: 4rem;
   --text-headingPlus: 3.5rem;
-  --text-heading: 3.4rem;
-  --text-subheading: 3rem;
-  --text-passive: 0.875rem;
+  --text-heading: 3.1rem;
+  --text-subheading: 2rem;
+  --text-passive: 1.5rem;
 }
 
 @font-face {

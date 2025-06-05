@@ -64,5 +64,5 @@ h2 {
   color: var(--primary-color);
 }
 .startGame-Btn:hover {
-  font-size: var(--text-headingPlus);
+  font-size: 3.5rem;
 }
