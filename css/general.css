@@ -9,6 +9,7 @@
   --succes-color: #60941a;
   --fail-color: #ff0000;
   --passive-color: #a6a6a6;
+  --whiteFilter-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(147deg) brightness(107%) contrast(104%);
 
   /* Base text sizes */
   --text-titleBG: 5.1rem;
@@ -40,7 +41,7 @@ body {
   background-color: var(--background-color);
   color: var(--tertiary-color);
 }
-button {
+button, img {
   font-family: 'Mario';
   cursor: pointer;
 }
@@ -58,6 +59,7 @@ main {
 
   position: relative;
 }
+
 
 .backgroundSVG {
   position: absolute;
