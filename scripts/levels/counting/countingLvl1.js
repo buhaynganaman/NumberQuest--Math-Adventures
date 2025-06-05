@@ -1,4 +1,7 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
+import { renderFailPanel, initrenderFailPanel } from '../../pages/panels/failPanel.js';
+import { renderFailPanel1, initrenderFailPanel1 } from '../../pages/panels/failPanel1.js';
+import { renderSuccesPanel, initrenderSuccesPanel } from '../../pages/panels/succesPanel.js';
 
 export function renderCountingLvl1() {
   return `
@@ -59,5 +62,45 @@ export function initrenderCountingLvl1() {
     initStartGame();  // initialize StartGame event keys
   });
 
+  // Game logic
+  const cookies = document.querySelectorAll(".cookies");
+  const eaten = document.querySelector(".eaten-Counter");
+  const keepEatingBtn = document.querySelector(".keepEatingBtn")
+  const DoneEatingBtn = document.querySelector(".DoneEatingBtn")
+
+  const rightAmount = 5;
+  let eatenAmount = 0;
+
+  cookies.forEach(cookie => {
+    cookie.addEventListener("click", () => {
+      cookie.style.display = "none";
+      eatenAmount++;
+      eaten.innerHTML = eatenAmount;
+    });
+  });
+
+  keepEatingBtn.addEventListener("click", () => {
+    if(rightAmount !== eatenAmount) {
+      const mainScreen = document.querySelector(".main-Screen");
+      mainScreen.insertAdjacentHTML('beforeend', renderFailPanel());
+      initrenderFailPanel();
+    } else if (rightAmount === eatenAmount) {
+      const mainScreen = document.querySelector(".main-Screen");
+      mainScreen.insertAdjacentHTML('beforeend', renderFailPanel1());
+      initrenderFailPanel1();
+    }
+  })
+
+  DoneEatingBtn.addEventListener("click", () => {
+    if(rightAmount !== eatenAmount) {
+      const mainScreen = document.querySelector(".main-Screen");
+      mainScreen.insertAdjacentHTML('beforeend', renderFailPanel());
+      initrenderFailPanel();
+    } else {
+      const mainScreen = document.querySelector(".main-Screen");
+      mainScreen.insertAdjacentHTML('beforeend', renderSuccesPanel());
+      initrenderSuccesPanel();
+    }
+  })
 
 }
