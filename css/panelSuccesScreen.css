@@ -1,0 +1,81 @@
+.panel-Screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+
+  position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	background-color: rgba(255, 255, 255, 0.027);
+	backdrop-filter: blur(3px);
+
+	z-index: 99;
+}
+
+.panelContainer-Succes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 400px;
+  height: 250px;
+  padding: 10px;
+
+  border-radius: 20px;
+
+  background-color: var(--tertiary-color);
+}
+.succesTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--succes-color);
+  font-size: var(--text-subheading);
+}
+.tokenICON {
+  width: 40px;
+  height: 40px;
+}
+.succesSentence {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: var(--text-passive);
+}
+.optionsBtnContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+.retryBtn, .homeBtn, .nextBtn  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  object-fit: cover;
+  border: none;
+  background-color: transparent;
+}
+.panelIconBtn {
+  width: 60px;
+  height: 60px;
+
+  transition: 0.22s;
+}
+.panelIconBtn:hover {
+  width: 70px;
+  height: 70px;
+}
+.panelIconBtn:active {
+  width: 60px;
+  height: 60px;
+}

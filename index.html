@@ -14,9 +14,12 @@
   <link rel="stylesheet" href="css/additionScreen.css">
   <link rel="stylesheet" href="css/subtractionScreen.css">
   <link rel="stylesheet" href="css/countingScreen.css">
-  <link rel="stylesheet" href="css/panelScreen.css">
+  <link rel="stylesheet" href="css/panelSuccesScreen.css">
+  <link rel="stylesheet" href="css/panelfailedScreen.css">
+  <link rel="stylesheet" href="css/panelCompleteScreen.css">
 
   <!-- JS Script link -->
+  <script type="module" src="scripts/pages/mainScree.js" defer></script>
   <script type="module" src="scripts/pages/splashScreen.js" defer></script>
 
 
@@ -400,7 +403,90 @@
     <div class="main-Screen">
 
       <div class="panel-Screen">
+        <div class="panelContainer-Succes">
+          <div class="succesTxt">
+            Success
+            <img class="tokenICON" src="assets/images/tokenICON.png">
+          </div>
+          <div class="succesSentence">
+            Great Job, you eat the right amount of cookies on the table.
+          </div>
+          <div class="optionsBtnContainer">
+            <button class="retryBtn">
+              <img class="panelIconBtn" src="assets/images/retryICON.png">
+            </button>
+            <button class="homeBtn">
+              <img class="panelIconBtn" src="assets/images/homeICON.png">
+            </button>
+            <button class="nextBtn">
+              <img class="panelIconBtn" src="assets/images/nextICON.png">
+            </button>
+          </div>
+        </div>  
+      </div>
 
+    </div>
+
+  </main>
+
+  <!-- ----------------------------------------------------------- -->
+
+  <main>
+
+    <img class="backgroundSVG" src="assets/images/background.svg">
+
+    <div class="main-Screen">
+
+      <div class="panel-Screen">
+        <div class="panelContainer-Failed">
+          <div class="FailedTxt">Failed</div>
+          <div class="FailedSentence">
+            You fail to eat the right amount of cookies on the table.
+          </div>
+          <div class="optionsBtnContainer">
+            <button class="retryBtn">
+              <img class="panelIconBtn" src="assets/images/retryICON.png">
+            </button>
+            <button class="homeBtn">
+              <img class="panelIconBtn" src="assets/images/homeICON.png">
+            </button>
+          </div>
+        </div>  
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ----------------------------------------------------------- -->
+
+  <main>
+
+    <img class="backgroundSVG" src="assets/images/background.svg">
+
+    <div class="main-Screen">
+
+      <div class="panel-Screen">
+        <div class="panelContainer-Complete">
+          <div class="CompleteTxt">
+            Complete
+            <img class="tokenICON" src="assets/images/tokenICON.png">
+          </div>
+          <div class="CompleteSentence">
+            You did a good job!
+          </div>
+          <div class="optionsBtnContainer">
+            <button class="retryBtn">
+              <img class="panelIconBtn" src="assets/images/retryICON.png">
+            </button>
+            <button class="homeBtn">
+              <img class="panelIconBtn" src="assets/images/homeICON.png">
+            </button>
+            <button class="nextBtn">
+              <img class="panelIconBtn" src="assets/images/nextICON.png">
+            </button>
+          </div>
+        </div>  
       </div>
 
     </div>
