@@ -1,5 +1,6 @@
 import { renderAdditionlvl1, initrenderAdditionlvl1 } from '../levels/addition/additionLvl1.js';
 import { renderSubtractionLvl1, initrenderSubtractionLvl1 } from '../levels/subtraction/subtractionLvl1.js';
+import { renderCountingLvl1, initrenderCountingLvl1 } from '../levels/counting/countingLvl1.js';
 
 export function renderStartAdventure() {
   return `
@@ -19,7 +20,7 @@ export function renderStartAdventure() {
             <span class="text-Bg">Subtraction Advenutre</span>
           </button>
 
-          <button class="game-type-Btn">
+          <button class="game-type-Btn countingGameBtn">
             <img class="blob-bg" src="/assets/images/blob11.png">
             Counting Advenutre
             <span class="text-Bg">Counting Advenutre</span>
@@ -53,6 +54,14 @@ export function initrenderStartAdventure() {
     const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderSubtractionLvl1();
     initrenderSubtractionLvl1();  // initialize subtractionGameScreen event keys
+  });
+
+  // startAdventureScreen ==> countingGameScreen
+  const countingGameBtn = document.querySelector(".countingGameBtn");
+  countingGameBtn.addEventListener("click", () => {
+    const mainScreen = document.querySelector(".main-Screen");
+    mainScreen.innerHTML = renderCountingLvl1();
+    initrenderCountingLvl1();  // initialize countingGameScreen event keys
   });
 
 }
