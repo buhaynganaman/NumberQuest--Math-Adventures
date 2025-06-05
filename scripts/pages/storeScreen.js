@@ -48,7 +48,7 @@ export function initStore() {
   backBtn.addEventListener("click", () => {
     const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderStartGame();
-    initStartGame();  // initialize store event keys
+    initStartGame();  // initialize StartGame event keys
   });
 
 

@@ -57,12 +57,12 @@ export function renderAchievement() {
 
 export function initAchievement() {
 
-  // storeScreen ==> start game screen
+  // achievementScreen ==> start game screen
   const backBtn = document.querySelector(".back-Btn");
   backBtn.addEventListener("click", () => {
     const mainScreen = document.querySelector(".main-Screen");
     mainScreen.innerHTML = renderStartGame();
-    initStartGame();  // initialize store event keys
+    initStartGame();  // initialize StartGame event keys
   });
 
 

@@ -1,5 +1,6 @@
 import { renderStore, initStore } from './storeScreen.js';
 import { renderAchievement, initAchievement } from './achievementScreen.js';
+import { renderStartAdventure, initrenderStartAdventure } from './startAdventureScreen.js';
 
 export function renderStartGame() {
   return `
@@ -7,7 +8,7 @@ export function renderStartGame() {
 
         <div class="start-Container">
           <img class="blob4" src="assets/images/blob4.png">
-          <button class="start-Adventure-Btn">
+          <button class="start-Adventure-Btn startAdventureGameBtn">
             Start Adventure's
             <h2>Start Adventure's</h2>
           </button>
@@ -53,7 +54,15 @@ export function initStartGame() {
     achievementBtn.addEventListener("click", () => {
       const mainScreen = document.querySelector(".main-Screen");
       mainScreen.innerHTML = renderAchievement();
-      initAchievement(); // initialize store event keys
+      initAchievement(); // initialize achievement event keys
+    });
+
+    // render start Adventure screen
+    const startAdventureGameBtn = document.querySelector(".startAdventureGameBtn");
+    startAdventureGameBtn.addEventListener("click", () => {
+      const mainScreen = document.querySelector(".main-Screen");
+      mainScreen.innerHTML = renderStartAdventure();
+      initrenderStartAdventure(); // initialize start Adventure event keys
     });
 
 }
