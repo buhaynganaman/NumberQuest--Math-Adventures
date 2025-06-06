@@ -1,5 +1,6 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderCompleteLvLpanel, initrenderCompleteLvLpanel } from '../../pages/panels/completePanel.js';
+import { ButtonPop } from '../../../utils/music/ButtonPop.js'
 
 export function renderAdditionlvl1() {
   return `
@@ -35,10 +36,13 @@ export function renderAdditionlvl1() {
 }
 
 export function initrenderAdditionlvl1() {
+  // Parent Screen
+  const mainScreen = document.querySelector(".main-Screen");
+  
   // additionScreen ==> StartGame screen
   const backBtn = document.querySelector(".homeBtn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderStartGame();
     initStartGame(); // initialize StartGame event keys
   });
@@ -51,6 +55,8 @@ export function initrenderAdditionlvl1() {
   choices.forEach(choice => {
     choice.addEventListener("click", () => {
       if (choice.textContent === correctAnswer) {
+        ButtonPop();
+
         // Show the correct answer in the UI
         answerSpan.textContent = correctAnswer;
 
@@ -61,6 +67,7 @@ export function initrenderAdditionlvl1() {
         showLevelCompletePanel("additionlvl1");
 
       } else {
+        ButtonPop();
         // Hide the wrong answer
         choice.style.display = "none";
       }
@@ -71,7 +78,6 @@ export function initrenderAdditionlvl1() {
 // Function to show the level complete panel
 function showLevelCompletePanel(levelId) {
   const mainScreen = document.querySelector(".main-Screen");
-
   // insert the panel to screen
   mainScreen.insertAdjacentHTML('beforeend', renderCompleteLvLpanel(levelId));
   initrenderCompleteLvLpanel(levelId);

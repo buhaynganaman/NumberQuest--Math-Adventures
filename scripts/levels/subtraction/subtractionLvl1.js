@@ -1,5 +1,6 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderCompleteLvLpanel, initrenderCompleteLvLpanel } from '../../pages/panels/completePanel.js';
+import { ButtonPop } from '../../../utils/music/ButtonPop.js'
 
 export function renderSubtractionLvl1() {
   return `
@@ -35,11 +36,13 @@ export function renderSubtractionLvl1() {
 }
 
 export function initrenderSubtractionLvl1() {
+  // Parent Screen
+  const mainScreen = document.querySelector(".main-Screen");
 
   // subtractionGameScreen ==> StartGame screen
   const backBtn = document.querySelector(".homeBtn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
   });
@@ -52,6 +55,8 @@ export function initrenderSubtractionLvl1() {
   choices.forEach(choice => {
     choice.addEventListener("click", () => {
       if (choice.textContent === correctAnswer) {
+        ButtonPop();
+
         // Show the correct answer in the UI
         answerSpan.textContent = correctAnswer;
 
@@ -62,6 +67,7 @@ export function initrenderSubtractionLvl1() {
         showLevelCompletePanel("subtractionlvl1");
 
       } else {
+        ButtonPop();
         // Hide the wrong answer
         choice.style.display = "none";
       }

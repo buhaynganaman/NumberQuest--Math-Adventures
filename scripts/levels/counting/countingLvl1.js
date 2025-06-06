@@ -2,6 +2,7 @@ import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderFailPanel, initrenderFailPanel } from '../../pages/panels/failPanel.js';
 import { renderFailPanel1, initrenderFailPanel1 } from '../../pages/panels/failPanel1.js';
 import { renderSuccesPanel, initrenderSuccesPanel } from '../../pages/panels/succesPanel.js';
+import { ButtonPop } from '../../../utils/music/ButtonPop.js'
 
 export function renderCountingLvl1() {
   return `
@@ -61,6 +62,7 @@ export function initrenderCountingLvl1() {
   // subtractionGameScreen ==> StartGame screen
   const backBtn = document.querySelector(".homeBtn");
   backBtn.addEventListener("click", () => {
+    ButtonPop();
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
   });
@@ -89,6 +91,7 @@ export function initrenderCountingLvl1() {
   });
 
   keepEatingBtn.addEventListener("click", () => {
+    ButtonPop();
     if(rightAmount !== eatenAmount) {
       showLevelFailPanel("countinglvl1");
     } else if (rightAmount === eatenAmount) {
@@ -97,6 +100,7 @@ export function initrenderCountingLvl1() {
   })
 
   DoneEatingBtn.addEventListener("click", () => {
+    ButtonPop();
     if(rightAmount !== eatenAmount) {
       showLevelFailPanel("countinglvl1");
     } else {

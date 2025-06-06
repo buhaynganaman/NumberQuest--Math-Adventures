@@ -1,6 +1,7 @@
 import { renderStore, initStore } from './storeScreen.js';
 import { renderAchievement, initAchievement } from './achievementScreen.js';
 import { renderStartAdventure, initrenderStartAdventure } from './startAdventureScreen.js';
+import { ButtonPop } from '../../utils/music/ButtonPop.js'
 
 export function renderStartGame() {
   return `
@@ -41,10 +42,13 @@ export function renderStartGame() {
 
 export function initStartGame() {
 
+  // Parent Screen
+  const mainScreen = document.querySelector(".main-Screen");
+
   // render store screen
   const storeBtn = document.querySelector(".storeBtn");
   storeBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderStore();
     initStore(); // initialize store event keys
   });
@@ -52,7 +56,7 @@ export function initStartGame() {
     // render achievement screen
     const achievementBtn = document.querySelector(".achievementBtn");
     achievementBtn.addEventListener("click", () => {
-      const mainScreen = document.querySelector(".main-Screen");
+      ButtonPop();
       mainScreen.innerHTML = renderAchievement();
       initAchievement(); // initialize achievement event keys
     });
@@ -60,7 +64,7 @@ export function initStartGame() {
     // render start Adventure screen
     const startAdventureGameBtn = document.querySelector(".startAdventureGameBtn");
     startAdventureGameBtn.addEventListener("click", () => {
-      const mainScreen = document.querySelector(".main-Screen");
+      ButtonPop();
       mainScreen.innerHTML = renderStartAdventure();
       initrenderStartAdventure(); // initialize start Adventure event keys
     });

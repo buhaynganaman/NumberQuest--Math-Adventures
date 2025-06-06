@@ -1,6 +1,7 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderAdditionlvl1, initrenderAdditionlvl1 } from '../../levels/addition/additionLvl1.js';
 import { renderSubtractionLvl1, initrenderSubtractionLvl1 } from '../../levels/subtraction/subtractionLvl1.js';
+import { ButtonPop } from '../../../utils/music/ButtonPop.js'
 
 export function renderCompleteLvLpanel(levelId) {
   return `
@@ -35,6 +36,7 @@ export function initrenderCompleteLvLpanel(levelId) {
   // panel ==> StartGame screen
   const backBtn = document.querySelector(".panel-Screen .homeBtn");
   backBtn.addEventListener("click", () => {
+    ButtonPop();
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
   });
@@ -42,6 +44,7 @@ export function initrenderCompleteLvLpanel(levelId) {
   // Retry button
   const retryBtn = document.querySelector(".panel-Screen .retryBtn");
   retryBtn.addEventListener("click", () => {
+    ButtonPop();
     // Dynamic level retry based on ID
     if (levelId === "additionlvl1") {
       mainScreen.innerHTML = renderAdditionlvl1();

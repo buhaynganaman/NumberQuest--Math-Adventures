@@ -1,4 +1,5 @@
 import { renderStartGame, initStartGame } from './startGameScreen.js';
+import { ButtonPop } from '../../utils/music/ButtonPop.js'
 
 export function renderStore() {
   return `
@@ -42,11 +43,13 @@ export function renderStore() {
 }
 
 export function initStore() {
-
+  // Parent Screen
+  const mainScreen = document.querySelector(".main-Screen");
+  
   // storeScreen ==> start game screen
   const backBtn = document.querySelector(".back-Btn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
   });

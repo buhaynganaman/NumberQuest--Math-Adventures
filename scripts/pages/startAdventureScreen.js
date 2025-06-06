@@ -1,6 +1,7 @@
 import { renderAdditionlvl1, initrenderAdditionlvl1 } from '../levels/addition/additionLvl1.js';
 import { renderSubtractionLvl1, initrenderSubtractionLvl1 } from '../levels/subtraction/subtractionLvl1.js';
 import { renderCountingLvl1, initrenderCountingLvl1 } from '../levels/counting/countingLvl1.js';
+import { ButtonPop } from '../../utils/music/ButtonPop.js'
 
 export function renderStartAdventure() {
   return `
@@ -39,11 +40,13 @@ export function renderStartAdventure() {
 }
 
 export function initrenderStartAdventure() {
+  // Parent Screen
+  const mainScreen = document.querySelector(".main-Screen");
 
   // startAdventureScreen ==> additionGameScreen
   const backBtn = document.querySelector(".additionGameBtn");
   backBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderAdditionlvl1();
     initrenderAdditionlvl1();  // initialize additionGameScreen event keys
   });
@@ -51,7 +54,7 @@ export function initrenderStartAdventure() {
   // startAdventureScreen ==> subtractionGameScreen
   const subtractionGameBtn = document.querySelector(".subtractionGameBtn");
   subtractionGameBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderSubtractionLvl1();
     initrenderSubtractionLvl1();  // initialize subtractionGameScreen event keys
   });
@@ -59,7 +62,7 @@ export function initrenderStartAdventure() {
   // startAdventureScreen ==> countingGameScreen
   const countingGameBtn = document.querySelector(".countingGameBtn");
   countingGameBtn.addEventListener("click", () => {
-    const mainScreen = document.querySelector(".main-Screen");
+    ButtonPop();
     mainScreen.innerHTML = renderCountingLvl1();
     initrenderCountingLvl1();  // initialize countingGameScreen event keys
   });
