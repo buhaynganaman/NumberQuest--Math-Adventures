@@ -1,5 +1,6 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderCountingLvl1, initrenderCountingLvl1 } from '../../levels/counting/countingLvl1.js';
+import { ButtonPop } from '../../../utils/music/ButtonPop.js'
 
 export function renderFailPanel(levelId) {
   return `
@@ -28,6 +29,7 @@ export function initrenderFailPanel(levelId) {
   // panel ==> StartGame screen
   const backBtn = document.querySelector(".panel-Screen .homeBtn");
   backBtn.addEventListener("click", () => {
+    ButtonPop();
     mainScreen.innerHTML = renderStartGame();
     initStartGame();  // initialize StartGame event keys
   });
@@ -35,6 +37,7 @@ export function initrenderFailPanel(levelId) {
   // Retry button
   const retryBtn = document.querySelector(".panel-Screen .retryBtn");
   retryBtn.addEventListener("click", () => {
+    ButtonPop();
     // Dynamic level retry based on ID
     if (levelId === "countinglvl1") {
       mainScreen.innerHTML = renderCountingLvl1();

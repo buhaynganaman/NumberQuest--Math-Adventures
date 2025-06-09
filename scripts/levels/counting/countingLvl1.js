@@ -3,6 +3,7 @@ import { renderFailPanel, initrenderFailPanel } from '../../pages/panels/failPan
 import { renderFailPanel1, initrenderFailPanel1 } from '../../pages/panels/failPanel1.js';
 import { renderSuccesPanel, initrenderSuccesPanel } from '../../pages/panels/succesPanel.js';
 import { ButtonPop } from '../../../utils/music/ButtonPop.js'
+import { audioCrunchSound } from '../../../utils/music/crunchSound.js'
 
 export function renderCountingLvl1() {
   return `
@@ -84,6 +85,7 @@ export function initrenderCountingLvl1() {
 
   cookies.forEach(cookie => {
     cookie.addEventListener("click", () => {
+      audioCrunchSound();
       cookie.style.display = "none";
       eatenAmount++;
       eaten.innerHTML = eatenAmount;
