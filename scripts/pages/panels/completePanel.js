@@ -1,7 +1,8 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderAdditionlvl1, initrenderAdditionlvl1 } from '../../levels/addition/additionLvl1.js';
 import { renderSubtractionLvl1, initrenderSubtractionLvl1 } from '../../levels/subtraction/subtractionLvl1.js';
-import { ButtonPop } from '../../../utils/music/ButtonPop.js'
+import { ButtonPop } from '../../../utils/music/ButtonPop.js';
+import { audioCompleteChallenge } from '../../../utils/music/completePanelSound.js';
 
 export function renderCompleteLvLpanel(levelId) {
   return `
@@ -31,6 +32,7 @@ export function renderCompleteLvLpanel(levelId) {
 }
 
 export function initrenderCompleteLvLpanel(levelId) {
+  audioCompleteChallenge();
   const mainScreen = document.querySelector(".main-Screen");
 
   // panel ==> StartGame screen

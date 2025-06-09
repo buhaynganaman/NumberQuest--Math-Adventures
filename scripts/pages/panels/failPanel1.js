@@ -1,6 +1,7 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderCountingLvl1, initrenderCountingLvl1 } from '../../levels/counting/countingLvl1.js';
-import { ButtonPop } from '../../../utils/music/ButtonPop.js'
+import { ButtonPop } from '../../../utils/music/ButtonPop.js';
+import { audioFailChallenge } from '../../../utils/music/failPanelSound.js';
 
 export function renderFailPanel1(levelId) {
   return `
@@ -24,6 +25,7 @@ export function renderFailPanel1(levelId) {
 }
 
 export function initrenderFailPanel1(levelId) {
+  audioFailChallenge();
   const mainScreen = document.querySelector(".main-Screen");
 
   // panel ==> StartGame screen

@@ -2,8 +2,9 @@ import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderFailPanel, initrenderFailPanel } from '../../pages/panels/failPanel.js';
 import { renderFailPanel1, initrenderFailPanel1 } from '../../pages/panels/failPanel1.js';
 import { renderSuccesPanel, initrenderSuccesPanel } from '../../pages/panels/succesPanel.js';
-import { ButtonPop } from '../../../utils/music/ButtonPop.js'
-import { audioCrunchSound } from '../../../utils/music/crunchSound.js'
+import { ButtonPop } from '../../../utils/music/ButtonPop.js';
+import { audioCrunchSound } from '../../../utils/music/crunchSound.js';
+import { audioPotionSound } from '../../../utils/music/potionSound.js';
 
 export function renderCountingLvl1() {
   return `
@@ -57,7 +58,6 @@ export function renderCountingLvl1() {
 }
 
 export function initrenderCountingLvl1() {
-
   const mainScreen = document.querySelector(".main-Screen");
 
   // subtractionGameScreen ==> StartGame screen
@@ -80,6 +80,7 @@ export function initrenderCountingLvl1() {
   let eatenAmount = 0;
 
   hintPotion.addEventListener("click", () => {
+    audioPotionSound();
     hint.style.display = "block";
   })
 

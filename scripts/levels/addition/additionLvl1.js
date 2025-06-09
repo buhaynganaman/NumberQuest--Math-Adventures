@@ -1,6 +1,6 @@
 import { renderStartGame, initStartGame } from '../../pages/startGameScreen.js';
 import { renderCompleteLvLpanel, initrenderCompleteLvLpanel } from '../../pages/panels/completePanel.js';
-import { ButtonPop } from '../../../utils/music/ButtonPop.js'
+import { ButtonPop } from '../../../utils/music/ButtonPop.js';
 
 export function renderAdditionlvl1() {
   return `
