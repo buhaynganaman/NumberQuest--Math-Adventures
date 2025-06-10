@@ -1,4 +1,4 @@
-const potionSound = document.querySelector(".complete-level-Sound");
+const potionSound = document.querySelector(".potion-Sound");
 
 export function audioPotionSound() {
   potionSound.currentTime = 0;
